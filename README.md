@@ -41,18 +41,30 @@ elasticsearch
 # 3- Golang Code.
 
 package main
+
 import (
+
 "log"
+
 "github.com/elastic/go-elasticsearch/v7"
+
 )
+
 func main() {
+
 cfg := elasticsearch.Config{
+
 Addresses: []string{
+
 "http://localhost:9200",
+
 },
+
 }
 es, _ := elasticsearch.NewClient(cfg)
+
 log.Println(es.Info())
+
 }
 
 kod içeriğince elasticsearch 3. sınfı kütüphanesini import ediyoruz. elasticsearch.Config içeriğine okunacak adresimizi tanımlıyoruz elasticsearch 9200 portunda çalışmaktadır. Config içeriğinde tls sertifika, Username, Password, Transport vb. işlemleride yapılmaktadır ama bu örneğimizde gerekmediği için kullanılmamıştır. sonrasında ise elasticsearch standart okunan json formatını okuyoruz.
